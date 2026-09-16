@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splitzon — How It Works</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/how-it-works.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">
+    <img src="assets/images/logo.png" alt="Splitzon" class="logo-img"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="logo-fallback" style="display:none;">S</div>
+    <span class="logo-text">Splitzon</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="for-you.html">For You</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+  </ul>
+
+  <div class="nav-auth">
+    <a href="https://szfe.atom8itsolutions.com/login" class="btn-login">Login</a>
+    <a href="https://szfe.atom8itsolutions.com/login" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+<!-- ================= HOW IT WORKS (FIXED) ================= -->
+<section class="how-section" id="how-it-works">
+
+  <!-- HERO / SCAN & ADD -->
+  <div class="how-hero">
+
+    <div class="how-hero-text">
+      <p class="section-label">SCAN &amp; ADD EXPENSE</p>
+
+      <h2>
+        Snap a bill.<br>
+        <span>It's added.</span>
+      </h2>
+
+      <p class="how-description">
+        Just scan your receipt or send it via WhatsApp or Telegram.
+        Splitzon automatically reads the details, adds your expense,
+        and helps you split it with the right people.
+      </p>
+
+      <div class="how-methods">
+
+        <div class="how-method">
+          <div class="how-method-icon icon-green">
+            <img src="assets/images/scan_in_app.png" alt="Scan in app">
+          </div>
+          <h4>Scan in app</h4>
+          <p>Snap a bill and<br>add instantly.</p>
+        </div>
+
+        <div class="how-method">
+          <div class="how-method-icon whatsapp-icon">
+            <img src="assets/images/whats_app.png" alt="WhatsApp">
+          </div>
+          <h4>Add via WhatsApp</h4>
+          <p>Send a bill to our<br>AI bot.</p>
+        </div>
+
+        <div class="how-method">
+          <div class="how-method-icon telegram-icon">
+            <img src="assets/images/telegram_app.png" alt="Telegram">
+          </div>
+          <h4>Add via Telegram</h4>
+          <p>Send a bill to our<br>AI bot.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="how-scan-visual">
+      <img
+        src="assets/images/how_scan_phone.png"
+        alt="Scan receipt with Splitzon"
+        class="scan-phone-img"
+      />
+
+      <!-- FLOATING CARD 1: scanning status -->
+      <div class="scan-status-card">
+        <div class="scan-status-icon">
+            <img src="assets/images/scan_in_app.png" alt="Scanning">
+        </div>
+        <strong>Scanning...</strong>
+        <p>AI is reading your bill</p>
+        <div class="scan-progress"><span></span></div>
+      </div>
+
+      <div class="scan-to-bill-arrow">↘</div>
+
+      <!-- FLOATING CARD 2: detected bill details -->
+      <div class="bill-detail-card">
+        <div class="bill-detail-head">
+          <strong>Bill details detected</strong>
+          <a href="#">Edit</a>
+        </div>
+
+        <div class="bill-detail-row">
+          <span>Merchant</span>
+          <b>Cafe Beans</b>
+        </div>
+        <div class="bill-detail-row">
+          <span>Date</span>
+          <b>12 May 2026</b>
+        </div>
+
+        <div class="bill-detail-item">
+          <span>☕ Cappuccino</span>
+          <b>₹120</b>
+        </div>
+        <div class="bill-detail-item">
+          <span>🥪 Sandwich</span>
+          <b>₹180</b>
+        </div>
+        <div class="bill-detail-item">
+          <span>🍟 French Fries</span>
+          <b>₹90</b>
+        </div>
+
+        <div class="bill-detail-total">
+          <span>Total</span>
+          <b>₹390</b>
+        </div>
+
+        <button type="button" class="bill-detail-btn">Add to Expense</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- WHATSAPP / TELEGRAM -->
+  <div class="ai-section">
+
+    <p class="section-label">— ADD VIA WHATSAPP OR TELEGRAM —</p>
+
+    <h2>Your AI expense buddy, everywhere</h2>
+
+    <p class="ai-description">
+      Can't open the app? Just send your receipt to Splitzon on WhatsApp or Telegram.<br>
+      Our AI reads the bill, extracts the details, and adds the expense for you.
+    </p>
+
+    <div class="ai-cards">
+
+      <!-- WHATSAPP -->
+      <!-- NOTE: no visible <h3>/<p> heading here anymore — the PNG already
+           shows "Add via WhatsApp" + its subtitle at the top of the image.
+           We keep an sr-only heading for screen readers / SEO only. -->
+      <div class="ai-card whatsapp-card">
+        <h3 class="sr-only">Add via WhatsApp</h3>
+        <img
+          src="assets/images/how_whatsapp_chat.png"
+          alt="Add via WhatsApp — send a bill photo to our AI bot and add expenses instantly"
+          class="chat-image"
+        />
+      </div>
+
+      <!-- TELEGRAM -->
+      <div class="ai-card telegram-card">
+        <h3 class="sr-only">Add via Telegram</h3>
+        <img
+          src="assets/images/how_telegram_chat.png"
+          alt="Add via Telegram — send a bill photo to our AI bot and add expenses instantly"
+          class="chat-image"
+        />
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- WORKS FOR ALL BILLS -->
+  <div class="bills-section">
+
+    <div class="bills-content">
+
+      <p class="section-label">— WORKS FOR ALL KINDS OF BILLS —</p>
+
+      <h2>Scan. Split. Settle. Anywhere.</h2>
+
+      <p>
+        From food and groceries to travel and shopping, Splitzon reads your bills
+        and makes splitting effortless — whether it's from the app, WhatsApp, or Telegram.
+      </p>
+
+      <div class="bill-categories">
+
+        <div class="bill-category">
+          <span>🍽️</span>
+          <strong>Restaurants<br>&amp; Cafes</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>🛒</span>
+          <strong>Supermarkets<br>&amp; Grocery</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>🏨</span>
+          <strong>Hotels<br>&amp; Stays</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>✈️</span>
+          <strong>Flights<br>&amp; Travel</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>⛽</span>
+          <strong>Fuel<br>&amp; Transport</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>🛍️</span>
+          <strong>Shopping<br>&amp; Retail</strong>
+        </div>
+
+        <div class="bill-category">
+          <span>•••</span>
+          <strong>More<br>Categories</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="people-visual">
+      <img
+        src="assets/images/shared_expenses_people.png"
+        alt="Friends sharing expenses with Splitzon"
+      />
+    </div>
+
+  </div>
+
+
+  <!-- CTA -->
+  <div class="how-cta">
+
+    <div>
+      <h3>Ready to make expense sharing effortless?</h3>
+      <p>
+        Join Splitzon today and start splitting smarter with your friends, family, and groups.
+      </p>
+    </div>
+
+    <div class="how-cta-action">
+      <a
+        href="https://szfe.atom8itsolutions.com/login"
+        class="how-signup-btn"
+      >
+        Sign up for free <span>→</span>
+      </a>
+
+      <small>Free to use. No complicated setup.</small>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  <p>© Atom8. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="mailto:splitzonsupport@zhini.co.in">Support</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

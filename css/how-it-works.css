@@ -1,0 +1,563 @@
+/* ================= HOW IT WORKS (FIXED) ================= */
+
+body {
+  background:
+    radial-gradient(circle at 6% 22%, rgba(116, 224, 180, 0.22) 0 9%, transparent 9.5%),
+    radial-gradient(circle at 98% 28%, rgba(79, 211, 157, 0.25) 0 12%, transparent 12.5%),
+    radial-gradient(circle at 86% 88%, rgba(91, 218, 168, 0.18) 0 15%, transparent 15.5%),
+    radial-gradient(circle at 55% 42%, rgba(192, 248, 221, 0.65) 0 20%, transparent 48%),
+    linear-gradient(
+      110deg,
+      #F7FFFB 0%,
+      #ECFCF5 38%,
+      #D5F8E7 68%,
+      #A9EFD2 100%
+    );
+}
+
+.navbar {
+  background: transparent !important;
+  padding: 8px 56px !important;
+}
+
+.how-section {
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* screen-reader-only heading (kept for a11y/SEO, hidden visually
+   since the PNGs already show the title) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.how-hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 30px 38px 25px;
+
+  background: transparent;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.how-hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: -180px;
+  top: 70px;
+  border-radius: 50%;
+  background: rgba(91, 218, 168, 0.16);
+  box-shadow:
+    70px 80px 0 rgba(91, 218, 168, 0.08),
+    150px 150px 0 rgba(91, 218, 168, 0.06);
+  pointer-events: none;
+}
+
+.how-hero::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -190px;
+  top: -70px;
+  border-radius: 50%;
+  background: rgba(63, 207, 151, 0.15);
+  box-shadow:
+    -90px 190px 0 rgba(63, 207, 151, 0.08);
+  pointer-events: none;
+}
+
+.how-hero-text {
+  position: relative;
+  z-index: 2;
+  width: 40%;
+  max-width: 500px;
+  transform: translateX(35px);
+}
+
+.how-hero-text h2 {
+  font-size: 75px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  color: #101A66;
+}
+
+.how-hero-text h2 span {
+  color: #1E9E6B;
+}
+
+.how-description {
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 470px;
+  margin-bottom: 24px;
+}
+
+.how-methods {
+  display: flex;
+  gap: 28px;
+}
+
+.how-method {
+  width: 115px;
+}
+
+.how-method-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.how-method-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.whatsapp-icon {
+  background: #DDF3E7;
+}
+
+.telegram-icon {
+  background: #DCEBFB;
+}
+
+.how-method h4 {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.how-method p {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.how-scan-visual {
+  position: relative;
+  z-index: 2;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+  transform: translateX(-320px);
+}
+
+.scan-phone-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transform: translateX(40px);
+}
+
+/* FLOATING CARD 1 — matches the "Scanning..." card in the reference screenshot */
+.scan-status-card {
+  position: absolute;
+  top: 4%;
+  right: 35px;
+  width: 178px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(16, 26, 46, 0.14);
+  z-index: 2;
+}
+
+.scan-to-bill-arrow {
+  position: absolute;
+  top: 18%;
+  right: -20px;
+  font-size: 68px;
+  font-weight: 700;
+  color: #1E9E6B;
+  z-index: 4;
+}
+
+.scan-status-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #E4F9EE;
+  color: #1E9E6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  font-size: 16px;
+}
+
+.scan-status-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.scan-status-card strong {
+  display: block;
+  font-size: 13px;
+  color: #101A66;
+  margin-bottom: 2px;
+}
+
+.scan-status-card p {
+  margin: 0;
+  font-size: 11px;
+  color: #668078;
+}
+
+.scan-progress {
+  height: 5px;
+  background: #eee;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.scan-progress span {
+  display: block;
+  width: 65%;
+  height: 100%;
+  background: #1E9E6B;
+}
+
+/* FLOATING CARD 2 — matches the "Bill details detected" card in the reference screenshot */
+.bill-detail-card {
+  position: absolute;
+  bottom: 4%;
+  right: -120px;
+  width: 282px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(16, 26, 46, 0.16);
+  z-index: 3;
+}
+
+.bill-detail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bill-detail-head strong {
+  font-size: 13px;
+  color: #101A66;
+}
+
+.bill-detail-head a {
+  font-size: 12px;
+  color: #5b3df0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bill-detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #668078;
+  margin: 6px 0;
+}
+
+.bill-detail-row b {
+  color: #101A66;
+  font-weight: 600;
+}
+
+.bill-detail-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #333;
+  margin: 7px 0;
+}
+
+.bill-detail-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 14px;
+  color: #101A66;
+  border-top: 1px solid #eef1ef;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.bill-detail-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: #0F8B62;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+
+/* AI SECTION */
+
+.ai-section {
+  margin-top: 12px;
+  padding: 22px 18px 28px;
+  background: #F1FCF7;
+  border-radius: 26px;
+  text-align: center;
+}
+
+.ai-section h2 {
+  font-size: 32px;
+  color: #101A66;
+  margin-bottom: 5px;
+}
+
+.ai-description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.ai-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ai-card {
+  border-radius: 16px;
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  align-items: center;      /* FIX: no heading block anymore, so just center the image in the card */
+  justify-content: center;
+}
+
+.whatsapp-card {
+  background: #E4F9EE;
+}
+
+.telegram-card {
+  background: #E7F2FF;
+}
+
+/* FIX: removed .ai-card-heading / .ai-icon rules — no longer used,
+   since the PNG already renders the icon + title + subtitle banner.
+   Rendering them again in HTML caused the visible duplicate heading. */
+
+/* FIX: image now scales by its own aspect ratio instead of being
+   capped at 370px (which was cropping/leaving blank space). */
+.chat-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* BILLS SECTION */
+
+.bills-section {
+  margin-top: 20px;
+  min-height: 360px;
+  padding: 30px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 80% 50%, #D5F7E6 0%, transparent 40%),
+    #F1FCF7;
+}
+
+.bills-content {
+  width: 58%;
+  transform: translateX(35px);
+}
+
+.bills-content h2 {
+  font-size: 55px;
+  color: #101A66;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.bills-content > p:not(.section-label) {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 620px;
+  margin-bottom: 18px;
+}
+
+.bill-categories {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bill-category {
+  width: 78px;
+  min-height: 76px;
+  padding: 9px 5px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #E5F0EB;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bill-category span {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.bill-category strong {
+  font-size: 9px;
+  line-height: 1.25;
+  color: #101A66;
+}
+
+.people-visual {
+  width: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.people-visual img {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  display: block;
+}
+
+
+/* CTA */
+
+.how-cta {
+  margin-top: 18px;
+  padding: 24px 38px;
+  border-radius: 24px;
+  background: #EAF9F1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.how-cta h3 {
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+
+.how-cta p {
+  font-size: 13px;
+}
+
+.how-cta-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* FIX: was 'center' — button/small text should hug the right edge */
+  gap: 5px;
+}
+
+.how-signup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-width: 200px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #0F8B62;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.how-signup-btn span {
+  font-size: 20px;
+}
+
+.how-cta small {
+  font-size: 10px;
+  color: #668078;
+}
+
+
+/* ================= RESPONSIVE (FIX: none of this existed before) ================= */
+
+@media (max-width: 980px) {
+  .how-hero {
+    flex-direction: column;
+    min-height: auto;
+    padding: 28px 24px;
+    text-align: left;
+  }
+  .how-hero-text,
+  .how-scan-visual {
+    width: 100%;
+    max-width: 100%;
+  }
+  .how-hero-text h2 { font-size: 38px; }
+  .how-methods { flex-wrap: wrap; gap: 20px; }
+
+  /* FIX: floating cards go static/stacked on mobile instead of absolute-overlapping */
+  .how-scan-visual {
+    flex-direction: column;
+    padding-right: 0;
+    gap: 14px;
+  }
+  .scan-phone-img { max-width: 220px; }
+  .scan-status-card,
+  .bill-detail-card {
+    position: static;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .ai-cards { grid-template-columns: 1fr; }
+
+  .bills-section { flex-direction: column; padding: 26px 22px; }
+  .bills-content, .people-visual { width: 100%; }
+  .people-visual { margin-top: 16px; }
+
+  .how-cta { flex-direction: column; align-items: flex-start; text-align: left; }
+  .how-cta-action { align-items: flex-start; width: 100%; }
+  .how-signup-btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .bill-category { width: calc(33.333% - 8px); }
+}
