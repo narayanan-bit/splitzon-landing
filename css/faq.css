@@ -575,3 +575,181 @@
   margin-left: auto;
   margin-right: 24px;
 }
+/* ==========================================================
+   MOBILE HAMBURGER MENU
+   Desktop layout remains completely unchanged
+   ========================================================== */
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 30;
+  flex-shrink: 0;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy-text, #101A66);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(12, 42, 59, 0.14);
+  margin-top: 8px;
+  padding: 10px 8px;
+  order: 3;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-links a {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy-text, #101A66);
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+
+.mobile-nav-links a.active,
+.mobile-nav-links a:active,
+.mobile-nav-links a:hover {
+  background: #eafcf4;
+  color: var(--section-label-green, #1E9E6B);
+}
+
+.mobile-auth {
+  display: flex;
+  gap: 10px;
+  padding: 10px 10px 4px;
+  border-top: 1px solid #eef3f1;
+  margin-top: 6px;
+}
+
+.mobile-auth .btn-login,
+.mobile-auth .btn-signup {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+}
+
+.mobile-auth .btn-login {
+  border: 1.5px solid var(--navy-text, #101A66);
+}
+
+
+/* ==========================================================
+   MOBILE ONLY
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+  /* Navbar */
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  /* Hide desktop navigation */
+  .navbar .nav-links {
+    display: none;
+  }
+
+  /* Hide desktop auth buttons */
+  .navbar > .nav-auth {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Mobile dropdown */
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  /* Existing mobile styles... */
+
+  /* Footer - mobile only */
+  .footer {
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  /* Hide Splitzon logo + brand text */
+  .footer-brand {
+    display: none;
+  }
+
+  /* Keep copyright + support visible */
+  .footer-bottom-bar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .footer-copyright {
+    margin: 0;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .footer-support-link {
+    margin: 0;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+}

@@ -7,33 +7,50 @@
   margin-top:-90px;
   height:580px;
   padding:162px 64px 0;
-  box-sizing:border-box;position:relative;overflow:hidden;background:radial-gradient(circle at 4% 35%,rgba(108,79,232,.14) 0%,transparent 55%),radial-gradient(circle at 95% 40%,rgba(87,197,150,.30) 0%,transparent 60%),linear-gradient(110deg,#EAF4F0 0%,#D8F0E5 42%,#B8E5D0 72%,#82D4B1 100%)}
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 90%, rgba(80,220,180,.35) 0%, transparent 45%),
+    radial-gradient(circle at 92% 8%, rgba(60,200,160,.30) 0%, transparent 40%),
+    linear-gradient(160deg, #F7FFFD 0%, #E9FBF4 45%, #D3F4E6 100%);
+}
 
+/* soft dotted mesh accent, top-right */
 .features-hero::before{
   content:"";
   position:absolute;
-  width:420px;
-  height:420px;
-  left:-180px;
-  top:80px;
+  width:520px;
+  height:520px;
+  right:-120px;
+  top:-180px;
   border-radius:50%;
-  background:rgba(108,79,232,.08);
-  filter:blur(2px);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(circle at 55% 20%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(circle at 75% 45%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(circle at 40% 60%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(circle at 65% 75%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(circle at 20% 55%, rgba(255,255,255,.55) 0%, transparent 3%),
+    radial-gradient(ellipse at center, rgba(60,200,165,.55) 0%, rgba(60,200,165,0) 70%);
+  background-size: 60px 60px, 60px 60px, 60px 60px, 60px 60px, 60px 60px, 60px 60px, 100% 100%;
+  z-index:0;
   pointer-events:none;
 }
 
+/* layered flowing waves at bottom */
 .features-hero::after{
   content:"";
   position:absolute;
-  width:360px;
-  height:360px;
-  right:-140px;
-  bottom:-120px;
-  border-radius:50%;
-  background:rgba(255,255,255,.16);
-  filter:blur(3px);
+  left:-5%; right:-5%; bottom:-8px;
+  height:130px;
+  background:#ffffff;
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  z-index:1;
   pointer-events:none;
 }
+
+.features-hero-inner{position:relative;z-index:3;}
 
 .features-hero-inner{
   max-width:1280px;
@@ -43,23 +60,23 @@
   align-items:center;
   justify-content:center;
   gap:48px;
-  transform:translateY(-95px);
+  transform:translateY(-55px);
   position:relative;
   z-index:2;
 }
 .features-hero-content{flex:1 1 480px;max-width:560px;position:relative;z-index:3;transform:translateX(-30px);}.features-hero h1{margin:5px 0 6px;font-size:58px;line-height:1.02;color:#101A66}.features-hero h1 span,.features-section h2 span,.bottom-copy h2 span{color:#1E9E6B}
 .features-hero h2{margin-bottom:8px;font-size:25px;color:#2868E8}.features-hero-content>p:not(.section-label){max-width:500px;font-size:16px;line-height:1.45;color:#405E6B}.hero-feature-list{display:flex;gap:22px;margin:18px 0}.hero-feature{width:90px;display:flex;flex-direction:column;gap:3px}.hero-feature img{width:48px;height:48px;object-fit:contain}.hero-feature strong{font-size:12px;line-height:1.1;color:#101A66}.hero-feature span{font-size:10px;line-height:1.25;color:#526D78}.features-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-width:200px;padding:12px 25px;border-radius:30px;background:#0F8B62;color:#fff;font-size:14px;font-weight:700;text-decoration:none}.features-cta span{font-size:20px}.features-hero-content>small{display:block;margin-top:6px;color:#668078;font-size:10px}
-.features-hero-visual{flex:1 1 400px;max-width:460px;min-height:300px;position:relative;display:flex;align-items:center;justify-content:center}
-.hero-phone{width:95%;max-width:460px;position:relative;z-index:2;display:block;transform:translateX(-85px);top:40px}
+.features-hero-visual{flex:1 1 400px;max-width:520px;min-height:300px;position:relative;display:flex;align-items:center;justify-content:center;overflow:visible}
+.hero-phone{width:95%;max-width:480px;position:relative;z-index:2;display:block;transform:translateX(-60px);top:40px}
 .hero-callout{position:absolute;top:8%;right:-25%;max-width:180px;font-size:17px;line-height:1.2;color:#101A66;transform:rotate(-5deg);z-index:3}
 .hero-chat-card{position:absolute;right:-150px;width:205px;min-height:72px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 10px 25px rgba(16,26,46,.10);display:flex;align-items:center;gap:10px;z-index:4}
 .hero-chat-card img{width:42px;height:42px;object-fit:contain}
 .hero-chat-card strong,.hero-chat-card span{display:block}
 .hero-chat-card strong{color:#101A66;font-size:12px;margin-bottom:3px}
 .hero-chat-card span{color:#526D78;font-size:9px}
-.whatsapp-card{top:29%}
-.telegram-card{top:48%}
-.hero-expense-card{position:absolute;right:-150px;bottom:18%;width:205px;padding:13px;border-radius:15px;background:rgba(239,253,246,.96);box-shadow:0 10px 25px rgba(16,26,46,.10);display:flex;align-items:center;gap:10px;z-index:4}
+.whatsapp-card{top:20%}
+.telegram-card{top:42%}
+.hero-expense-card{position:absolute;right:-150px;top:64%;width:205px;padding:13px;border-radius:15px;background:rgba(239,253,246,.96);box-shadow:0 10px 25px rgba(16,26,46,.10);display:flex;align-items:center;gap:10px;z-index:4}
 .success-icon{width:40px;height:40px;border-radius:50%;background:#0F8B62;color:#fff;display:grid;place-items:center;font-size:23px;flex:0 0 40px}
 .hero-expense-card strong,.hero-expense-card span{display:block}
 .hero-expense-card strong{color:#101A66;font-size:12px}
@@ -69,12 +86,9 @@
   margin:20px 100px 0;
   text-align:center;
   background:#F8FBFF;
-  border:2px solid #DDE7FF;
+  border:none;
   border-radius:28px;
-  box-shadow:
-    0 4px 20px rgba(60,90,160,.06),
-    0 0 0 100vmax #F8FBFF;
-  clip-path:inset(0 -100vmax);
+  box-shadow:0 4px 20px rgba(60,90,160,.06);
   position:relative;
   overflow:hidden;
 }
@@ -168,10 +182,10 @@
   font-size:10px;color:#173C53}
 .fx-card li::before{content:"✓";display:inline-grid;width:17px;height:17px;margin-right:7px;place-items:center;border-radius:50%;background:#159A70;color:#fff;font-size:10px;font-weight:800}
 .features-bottom{
-  margin-top:20px;
+  margin-top:0;
   margin-bottom:0;
-  min-height:300px;
-  padding:20px 35px;
+  min-height:200px;
+  padding:14px 30px;
   display:grid;
   grid-template-columns:42% 30% 28%;
   align-items:center;
@@ -179,25 +193,67 @@
   border-radius:0;
   background:radial-gradient(circle at 15% 50%,rgba(83,211,161,.35),transparent 38%),linear-gradient(110deg,#E9FAF3,#F3F7FF);
 }
-.friends-visual img{width:100%;max-width:500px;display:block}
-.bottom-copy h2{font-size:38px;line-height:1.05;color:#101A66;margin-bottom:8px}
-.bottom-copy p{font-size:14px;line-height:1.4;color:#526D78;margin-bottom:14px}
-.bottom-copy small{display:block;margin-top:6px;color:#668078;font-size:10px}
-.travel-visual img{width:100%;max-width:380px;display:block;margin-left:auto}
-@media(max-width:1000px){.features-hero-inner{flex-direction:column;gap:35px}.features-hero-content,.features-hero-visual{width:100%;max-width:700px;flex:none}
-.features-hero-visual{min-height:440px}.fx-grid{grid-template-columns:repeat(2,1fr)}
-.features-bottom{grid-template-columns:1fr 1fr}
-.travel-visual{display:none}}@media(max-width:600px){.features-hero h1{font-size:42px}
-.hero-feature-list{flex-wrap:wrap;gap:16px}
-.features-hero-visual{min-height:390px}
-.hero-phone{width:55%}.hero-chat-card,.hero-expense-card{width:175px}.fx-grid{grid-template-columns:1fr}.features-section{padding:25px 16px}.features-bottom{grid-template-columns:1fr;padding:25px 20px}.bottom-copy{text-align:center;margin-top:15px}.friends-visual img{margin:auto}}
+.friends-visual{display:flex;justify-content:center;}
+.friends-visual img{width:100%;max-width:340px;display:block;}
+.bottom-copy h2{font-size:28px;line-height:1.1;color:#101A66;margin-bottom:6px}
+.bottom-copy p{font-size:12px;line-height:1.35;color:#526D78;margin-bottom:10px}
+.bottom-copy small{display:block;margin-top:4px;color:#668078;font-size:9px}
+.travel-visual img{width:100%;max-width:260px;display:block;margin-left:auto;transform:translateX(-205px);}
+
+/* Mobile-only CTA that lives inside hero-feature-list, hidden on desktop */
+.hero-feature-cta-mobile{
+  display:none;
+}
+
+@media(max-width:1000px){
+  .features-hero-inner{flex-direction:column;gap:35px;margin:0 auto;transform:none}
+  .features-hero-content,.features-hero-visual{width:100%;max-width:700px;flex:none}
+  .features-hero-content{transform:none}
+  .features-hero-visual{display:none}
+  .fx-grid{grid-template-columns:repeat(2,1fr)}
+  .features-section{margin:20px 16px 0}
+  .features-bottom{grid-template-columns:1fr 1fr}
+  .travel-visual{display:none}
+  .footer{padding:20px 20px !important}
+}
+
+@media(max-width:600px){
+  .features-hero{margin-top:-60px;height:auto;padding:130px 20px 0}
+  .features-hero h1{font-size:42px}
+  .hero-feature-list{flex-wrap:wrap;gap:16px;align-items:flex-start}
+
+  /* Hide the standalone desktop CTA + note, use the one inside the grid instead */
+  .features-cta-desktop,
+  .cta-note-desktop{display:none}
+
+  .hero-feature-cta-mobile{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:8px;
+    flex:1 1 190px;
+  }
+  .hero-feature-cta-mobile .features-cta{
+    min-width:0;
+    width:100%;
+    white-space:nowrap;
+  }
+  .hero-feature-cta-mobile small{
+    color:#668078;
+    font-size:10px;
+  }
+  .hero-phone{width:55%}
+  .hero-chat-card,.hero-expense-card{width:100%;max-width:260px}
+  .fx-grid{grid-template-columns:1fr}
+  .features-section{padding:25px 16px;margin:20px 16px 0}
+  .fx-card{padding:20px;min-height:auto}
+  .fx-icon{position:static;display:block;width:90px;height:90px;margin:10px auto 0;transform:none}
+  .features-bottom{grid-template-columns:1fr;padding:25px 20px}
+  .bottom-copy{text-align:center;margin-top:15px}
+  .friends-visual img{margin:auto}
+}
 .footer {
   margin-top: 0;
   padding: 20px 70px;
-  background: radial-gradient(
-      circle at 15% 50%,
-      rgba(83,211,161,.35),
-      transparent 38%
-    ),
-    linear-gradient(110deg,#E9FAF3,#F3F7FF);
+  background: radial-gradient(circle at 15% 50%,rgba(83,211,161,.35),transparent 38%),linear-gradient(110deg,#E9FAF3,#F3F7FF);
 }

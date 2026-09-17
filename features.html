@@ -24,6 +24,26 @@
     <a href="https://szfe.atom8itsolutions.com/login" class="btn-login">Login</a>
     <a href="https://szfe.atom8itsolutions.com/login" class="btn-signup">Sign up</a>
   </div>
+
+  <!-- Mobile-only hamburger toggle -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Mobile-only dropdown menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="features.html" class="active">Features</a></li>
+      <li><a href="for-you.html">For You</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+    <div class="mobile-auth">
+      <a href="https://szfe.atom8itsolutions.com/login" class="btn-login">Login</a>
+      <a href="https://szfe.atom8itsolutions.com/login" class="btn-signup">Sign up</a>
+    </div>
+  </div>
 </nav>
 
 <section class="features-hero">
@@ -38,9 +58,13 @@
         <div class="hero-feature"><img src="assets/images/whats_app.png" alt=""><strong>WhatsApp AI Bot</strong><span>Send bills directly.</span></div>
         <div class="hero-feature"><img src="assets/images/telegram_app.png" alt=""><strong>Telegram AI Bot</strong><span>Forward bills effortlessly.</span></div>
         <div class="hero-feature"><img src="assets/images/feature_group.png" alt=""><strong>Split &amp; Settle</strong><span>Fair, fast and hassle-free.</span></div>
+        <div class="hero-feature-cta-mobile">
+          <a href="https://szfe.atom8itsolutions.com/login" class="features-cta">Get Started for Free <span>→</span></a>
+          <small>No credit card. No complicated setup.</small>
+        </div>
       </div>
-      <a href="https://szfe.atom8itsolutions.com/login" class="features-cta">Get Started for Free <span>→</span></a>
-      <small>No credit card. No complicated setup.</small>
+      <a href="https://szfe.atom8itsolutions.com/login" class="features-cta features-cta-desktop">Get Started for Free <span>→</span></a>
+      <small class="cta-note-desktop">No credit card. No complicated setup.</small>
     </div>
 
     <div class="features-hero-visual">
@@ -74,5 +98,8 @@
 </section>
 
 <footer class="footer"><p>© Atom8. All rights reserved.</p><div class="footer-links"><a href="mailto:splitzonsupport@zhini.co.in">Support</a></div></footer>
+
+<script src="js/script.js"></script>
+<script src="js/mobile-menu.js"></script>
 </body>
 </html>

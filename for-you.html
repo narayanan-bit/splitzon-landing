@@ -32,6 +32,26 @@
     <a href="https://szfe.atom8itsolutions.com/login" class="btn-login">Login</a>
     <a href="https://szfe.atom8itsolutions.com/login" class="btn-signup">Sign up</a>
   </div>
+
+  <!-- Mobile-only hamburger toggle -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Mobile-only dropdown menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="for-you.html" class="active">For You</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+    <div class="mobile-auth">
+      <a href="https://szfe.atom8itsolutions.com/login" class="btn-login">Login</a>
+      <a href="https://szfe.atom8itsolutions.com/login" class="btn-signup">Sign up</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -226,5 +246,6 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/mobile-menu.js"></script>
 </body>
 </html>

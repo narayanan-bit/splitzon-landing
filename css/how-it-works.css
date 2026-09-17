@@ -556,8 +556,29 @@ body {
   .how-cta { flex-direction: column; align-items: flex-start; text-align: left; }
   .how-cta-action { align-items: flex-start; width: 100%; }
   .how-signup-btn { width: 100%; }
+
+  /* FIX: mobile navbar padding — overrides the desktop !important rule above */
+  .navbar {
+    padding: 16px 20px !important;
+  }
+    .scan-to-bill-arrow {
+    display: none;
+  }
+    .how-scan-visual {
+    display: none;
+  }
+    .bills-content h2 {
+    white-space: normal;
+    font-size: 32px;
+  }
+    .how-hero-text,
+  .bills-content {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .bill-category { width: calc(33.333% - 8px); }
+  .bill-category {
+    width: calc((100% - 28px) / 3);
+  }
 }

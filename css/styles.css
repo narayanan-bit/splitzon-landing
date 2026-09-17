@@ -2,6 +2,7 @@
    Splitzon Landing Page — CSS
    Colors/fonts mirror the Flutter SplitzonColors / SplitzonText
    Updated to match latest Flutter home_screen.dart
+   + Mobile responsive fixes (hamburger menu, phone mockup, trust strip)
    ========================================================== */
 
 :root {
@@ -88,6 +89,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .navbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,6 +128,71 @@ a { text-decoration: none; color: inherit; }
   padding: 11px 30px; border-radius: 30px; transition: opacity 0.15s ease;
 }
 .btn-signup:hover { opacity: 0.9; }
+
+/* ================= HAMBURGER (mobile only) ================= */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 30;
+  flex-shrink: 0;
+}
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy-text);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(12, 42, 59, 0.14);
+  margin-top: 8px;
+  padding: 10px 8px;
+  order: 3;
+}
+.mobile-menu.open { display: flex; }
+.mobile-nav-links { list-style: none; display: flex; flex-direction: column; }
+.mobile-nav-links a {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy-text);
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+.mobile-nav-links a:active,
+.mobile-nav-links a:hover { background: var(--footer-bg); color: var(--section-label-green); }
+.mobile-auth {
+  display: flex;
+  gap: 10px;
+  padding: 10px 10px 4px;
+  border-top: 1px solid #EEF3F1;
+  margin-top: 6px;
+}
+.mobile-auth .btn-login,
+.mobile-auth .btn-signup {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+}
+.mobile-auth .btn-login { border: 1.5px solid var(--dark-green-btn); }
 
 .hero-content {
   position: relative;
@@ -372,15 +439,48 @@ a { text-decoration: none; color: inherit; }
     transform-origin: top right;
   }
 
-  .navbar { padding: 16px 20px; }
+  .navbar { padding: 16px 20px; flex-wrap: wrap; }
   .nav-links, .nav-auth { display: none; }
+  .hamburger-btn { display: flex; }
 
   .hero-content { padding: 20px 20px 40px; }
   .hero-heading { font-size: 34px; }
-  .hero-visual { display: none; }
+
+  /* Show a simplified centered phone mockup instead of the full laptop stack */
+  .hero-visual {
+    display: none;
+  }
+  .mockup-stack {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+  .laptop-mockup,
+  .float-card,
+  .card-telegram,
+  .card-currency,
+  .card-notify {
+    display: none;
+  }
+  .phone-mockup {
+    display: none;
+  }
+
+  /* Trust strip: stack vertically so text never gets clipped */
+  .trust-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px 20px;
+  }
+  .trust-item { white-space: normal; }
+  .trust-separator { display: none; }
 
   .why-section { padding: 20px; }
-  .feature-grid { grid-template-columns: 1fr; }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
   .feature-card { min-height: auto; }
 
   .perfect-section { padding: 18px 0 22px; }
@@ -398,4 +498,9 @@ a { text-decoration: none; color: inherit; }
   .cta-box .nav-auth { display: flex; }
 
   .footer { padding: 20px; }
+}
+
+@media (max-width: 420px) {
+  .hero-heading { font-size: 28px; }
+  .store-badges { flex-wrap: wrap; }
 }

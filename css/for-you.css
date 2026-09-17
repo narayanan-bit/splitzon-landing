@@ -51,6 +51,72 @@ a{text-decoration:none;color:inherit;}
 .btn-login{border:1px solid var(--navy);color:var(--navy);}
 .btn-signup{background:var(--green);color:#fff;}
 
+/* ================= HAMBURGER (mobile only — hidden on desktop) ================= */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 30;
+  flex-shrink: 0;
+}
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(12, 42, 59, 0.14);
+  margin-top: 8px;
+  padding: 10px 8px;
+  order: 3;
+}
+.mobile-menu.open { display: flex; }
+.mobile-nav-links { list-style: none; display: flex; flex-direction: column; }
+.mobile-nav-links a {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+.mobile-nav-links a.active,
+.mobile-nav-links a:active,
+.mobile-nav-links a:hover { background: var(--bg-green-light); color: var(--green-dark); }
+.mobile-auth {
+  display: flex;
+  gap: 10px;
+  padding: 10px 10px 4px;
+  border-top: 1px solid #EEF3F1;
+  margin-top: 6px;
+}
+.mobile-auth .btn-login,
+.mobile-auth .btn-signup {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+}
+.mobile-auth .btn-login { border: 1.5px solid var(--navy); }
+
 /* ---------- HERO ---------- */
 .hero{
   padding:120px 60px 90px;
@@ -535,21 +601,71 @@ a{text-decoration:none;color:inherit;}
 }
 @media(max-width:700px){
   .navbar,.hero,.groups-section,.how-section,.why-section,.cta-wrap,.footer{padding-left:20px;padding-right:20px;}
+
+  /* --- hamburger swap --- */
+  .navbar{flex-wrap:wrap;}
   .nav-links{display:none;}
+  .nav-auth{display:none;}
+  .hamburger-btn{display:flex;}
+
+  /* --- hero --- */
+  /* இப்போ இருக்குது */
+.hero{padding-top:80px;padding-bottom:20px;}
+
+/* இப்படி மாத்து */
+.hero{padding-top:110px;padding-bottom:20px;}
+  .hero-content{left:0;max-width:100%;text-align:center;}
   .hero-heading{font-size:36px;}
-  .hero-robot{
-    width:280px;
-    max-width:85%;
-    right:50%;
-    transform:translateX(50%);
-    bottom:0;
-    }
+  .hero-desc{margin-left:auto;margin-right:auto;}
+  .store-badges{justify-content:center;}
+.hero-robot{
+    width:380px;
+    max-width:90%;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    top:0;
+    bottom:auto;
+}
 
     .hero-visual{
-    min-height:380px;
+    min-height:300px;
     }
-  .groups-grid{grid-template-columns:1fr;}
-  .feature-grid{grid-template-columns:repeat(2,1fr);}
+
+  /* --- groups section --- */
+  .groups-section{margin-bottom:0;padding-top:20px;}
+  .groups-grid{grid-template-columns:repeat(2,1fr);margin-top:0;column-gap:10px;row-gap:14px;}
+  .group-card{min-height:auto;padding:0;}
+  .group-card img{width:100%;height:auto;}
+
+  /* --- how section --- */
+  .how-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .how-card:first-child .how-visual{height:auto;}
+  .how-card:first-child .how-phone{width:100%;max-width:100%;height:170px;object-fit:cover;}
+  .how-card:nth-child(2) .how-full-img,
+  .how-card:nth-child(3) .how-full-img{width:100%;max-width:100%;height:170px;object-fit:cover;}
+  .how-card{padding:6px;}
+
+  /* --- feature grid --- */
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+    width:100%;
+    margin-left:0;
+  }
+
+  /* --- cta / footer --- */
   .cta-box{flex-direction:column;align-items:flex-start;}
   .footer{flex-direction:column;gap:10px;text-align:center;}
+}
+
+@media(max-width:420px){
+  .hero-heading{font-size:30px;}
+  .feature-grid{grid-template-columns:1fr;}
+}
+
+@media(max-width:700px){
+  .hero-bubble,
+  .hero-tooltip{
+    display:none !important;
+  }
 }
