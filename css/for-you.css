@@ -48,7 +48,7 @@ a{text-decoration:none;color:inherit;}
 .btn-login,.btn-signup{
   padding:10px 22px;border-radius:30px;font-size:14px;font-weight:700;
 }
-.btn-login{border:1px solid var(--navy);color:var(--navy);}
+.btn-login{border:1px solid var(--navy);color:var(--navy);background:#fff;}
 .btn-signup{background:var(--green);color:#fff;}
 
 /* ================= HAMBURGER (mobile only — hidden on desktop) ================= */
