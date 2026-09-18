@@ -37,7 +37,7 @@ Both "Login" and "Sign up" buttons (top nav + bottom CTA) currently
 point to:
 
 ```
-https://szfe.atom8itsolutions.com/login
+https://szfe.atom8itsolutions.com/#/login
 ```
 
 Update this in `index.html` (search for `szfe.atom8itsolutions.com`)
