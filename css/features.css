@@ -129,17 +129,27 @@
   font-size:13px;color:#426277}
 .fx-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(12,1fr);
   gap:8px;
   text-align:left;
-  max-width:1200px;
+  max-width:1760px;
   margin:0 auto
+}
+
+@media(min-width:1001px){
+  .fx-card:nth-child(-n+4){
+    grid-column:span 3;
+  }
+
+  .fx-card:nth-child(n+5){
+    grid-column:span 4;
+  }
 }
 
 .fx-card{
   min-height:250px;
   padding:20px 24px;
-  padding-right:45%;
+  padding-right:50%;
   border:1px solid #D9E4FF;
   border-radius:18px;
   position:relative;
@@ -151,11 +161,11 @@
 .card-pink{background:#FFF0F5}.fx-number{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.65);color:#5B3DF0;font-size:15px;font-weight:800}
 .fx-icon{
   position:absolute;
-  right:25px;
+  right:15px;
   top:50%;
   transform:translateY(-50%);
-  width:180px;
-  height:180px;
+  width:150px;
+  height:150px;
   object-fit:contain;
   z-index:2;
   margin:0;
@@ -171,13 +181,13 @@
 
 .fx-card h3{
   margin:5px 0 4px;
-  max-width:280px;
+  max-width:100%;
   font-size:15px;line-height:1.08;color:#101A66}
 .fx-card p{
-  max-width:330px;
+  max-width:100%;
   margin-bottom:6px;
   font-size:10px;line-height:1.35;color:#526D78}
-.fx-card ul{list-style:none;padding:0;margin:0}.fx-card li{
+.fx-card ul{list-style:none;padding:0;margin:0;max-width:100%;}.fx-card li{
   margin:2px 0;
   font-size:10px;color:#173C53}
 .fx-card li::before{content:"✓";display:inline-grid;width:17px;height:17px;margin-right:7px;place-items:center;border-radius:50%;background:#159A70;color:#fff;font-size:10px;font-weight:800}

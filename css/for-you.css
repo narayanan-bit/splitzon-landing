@@ -340,7 +340,7 @@ a{text-decoration:none;color:inherit;}
 
 /* ---------- HOW SPLITZON HELPS SECTION ---------- */
 .how-section{
-  padding:30px 60px 70px;
+  padding:30px 60px 0px;
 
   background:
     radial-gradient(
