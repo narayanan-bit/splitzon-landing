@@ -37,10 +37,10 @@ Both "Login" and "Sign up" buttons (top nav + bottom CTA) currently
 point to:
 
 ```
-https://szfe.atom8itsolutions.com/#/login
+https://szfe.splitzon.co.in/#/login
 ```
 
-Update this in `index.html` (search for `szfe.atom8itsolutions.com`)
+Update this in `index.html` (search for `szfe.splitzon.co.in`)
 once your frontend server path is finalized.
 
 ## 3. Run locally
